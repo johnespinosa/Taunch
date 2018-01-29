@@ -1,0 +1,23 @@
+<!doctype html>
+<head>
+	<link rel="shortcut icon" type="image/x-icon" href="/static/images/brendonUrie.jpg" />
+	<link href="/static/stylesheets/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<h2 href = "/">
+		<a href = "/">
+		Taunch
+		</a>
+	</h2>
+	<h2>Sign Up</h2>
+	{% if sign_up_fail %}
+		<p>
+			That username already exists. Please enter a new username and password.
+		</p>
+	{% endif %}
+	<form id=comment_form action="/submit_sign_up" method="POST">
+		Username: <input type="text" name="username_input"><br>
+		Password: <input type="password" name="password_input"><br>
+		<input type ="submit" id=submit_button value="Sign Up" /><br>
+	</form>
+</body>

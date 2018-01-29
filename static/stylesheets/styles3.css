@@ -1,0 +1,519 @@
+body {
+	background-image: url("/static/images/cream_dust.png");
+}
+
+.comment
+{
+	border: 2px solid;
+	height:100%;
+	position:relative;
+	/*
+	    margin-top: 50px;
+	    padding-top: 25px;
+	    padding-bottom: 25px;
+   		display: inline;
+    	
+    	
+    */
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+    float:left;
+    border-radius: 15px;
+    text-align: center;
+    background-image: url("/static/images/cream_dust.png");
+    /* IE10 Consumer Preview */ /* IE10 Consumer Preview */
+    background-image: -ms-radial-gradient(center, ellipse farthest-corner, #52BAFF 0%, #00A3EF 100%) !important; /* Mozilla Firefox */
+    background-image: -moz-radial-gradient(center, ellipse farthest-corner, #52BAFF 0%, #00A3EF 100%) !important; /* Opera */
+    background-image: -o-radial-gradient(center, ellipse farthest-corner, #52BAFF 0%, #00A3EF 100%) !important; /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(radial, center center, 0, center center, 506, color-stop(0, #52BAFF), color-stop(1, #00A3EF)) !important; /* Webkit (Chrome 11+) */
+    background-image: -webkit-radial-gradient(center, ellipse farthest-corner, #52BAFF 0%, #00A3EF 100%) !important; /* W3C Markup, IE10 Release Preview */
+    background-image: radial-gradient(ellipse farthest-corner at center, #52BAFF 0%, #00A3EF 100%) !important;
+	
+}
+
+.leftAlign
+{
+	text-align : left !important;
+}
+
+.commentInput
+{
+	/*
+    display: inline;
+    	width: 80%;
+    	float:left;
+    	margin-left: 10%;
+    max-height: 500px;
+    overflow: scroll;
+       */
+	margin-bottom : 15px;
+}
+
+.glyphicon.glyphicon-plus {
+    font-size: 19px;
+}
+
+
+.inputs
+{
+	margin-top : 5px;
+}
+
+
+
+#addPicture
+{
+	height : 120px;
+	width : 120px;
+    float : left;
+    display : inline;
+    border: 2px solid;
+    border-radius: 25px;
+    text-align : center;
+    margin-left : 5px;
+    margin-bottom: 5px !important;
+}
+
+#lastAddedPic
+{
+	margin-bottom: 5px !important;
+}
+
+
+#addPicture:hover 
+{
+	/*color : #00b200;*/
+	color : #52BAFF;
+}
+
+.addedPictures
+{
+    height: 120px;
+    overflow-y: scroll;
+    width : 260px;
+}
+
+#addPicture > span
+{
+	line-height : 120px;
+}
+
+.memoryMain
+{
+	width: 90%;
+	margin-left:5%;
+}
+
+
+.replySection
+{
+    display: inline;
+    width: 80%;
+    float:left;
+    margin-left: 10%;
+    text-align: center;
+    height: 120px;
+    overflow: scroll;
+}
+
+.comContentSpacing {
+	margin-top: 10%;
+    display: inline;
+    width: 100%;
+    float:left;
+    text-align: center;
+}
+
+.commentHr
+{
+	margin-top: 10px; 
+	margin-bottom: 10px 
+}
+
+.textDisplay
+{
+	/*
+	max-height: 200px;
+	overflow: scroll;
+	text-align: left;
+    */
+    height: 120px;
+    overflow-y: scroll;
+}
+
+.pictureDisplay
+{
+    height: 120px;
+    overflow-y: scroll;
+}
+
+.replyTextDisplay
+{
+    overflow-y: scroll;
+}
+
+#picAddSection {
+	margin-left : -5px;
+	height : 125px !important;
+}
+
+#picAddSection > .imageStyle:hover
+{
+	opacity: 0.5;
+}
+
+#picAddSection > .imageStyle
+{
+	margin-bottom: 5px;
+	border-radius: 15px;
+	margin-left : 5px;
+}
+
+.imageStyle
+{
+	margin-bottom: 5px;
+	border-radius: 15px;
+	
+}
+
+.replyInput
+{
+	margin-top: 20px;
+	display: inline;
+    width: 80%;
+    float:left;
+    margin-left: 10%;
+    text-align: center;
+    max-height: 200px;
+    overflow: scroll;
+}
+
+.top-buffer { margin-top:20px; }
+
+.shadow {
+	box-shadow: 10px 10px 5px #888888;
+}
+
+.whiteSpaceDiv
+{
+	position:relative;
+    display: inline;
+    width: 100%;
+    float:left;
+    text-align: center;
+}
+
+.fieldset-auto-width {
+     display: inline-block;
+}
+
+.commentSection {
+	position: relative;
+}
+
+.floatRight {
+	float:right;
+}
+
+.deleteWarning
+{
+	position: absolute;
+    top: 25%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: inline;
+    width: 50%;
+    height:100%
+    float:left;
+    border-radius: 15px;
+    left: 25%;
+    text-align: center;
+    /* IE10 Consumer Preview */ /* IE10 Consumer Preview */
+    background-image: -ms-radial-gradient(center, ellipse farthest-corner, #52BAFF 0%, #00A3EF 100%); /* Mozilla Firefox */
+    background-image: -moz-radial-gradient(center, ellipse farthest-corner, #52BAFF 0%, #00A3EF 100%); /* Opera */
+    background-image: -o-radial-gradient(center, ellipse farthest-corner, #52BAFF 0%, #00A3EF 100%); /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(radial, center center, 0, center center, 506, color-stop(0, #52BAFF), color-stop(1, #00A3EF)); /* Webkit (Chrome 11+) */
+    background-image: -webkit-radial-gradient(center, ellipse farthest-corner, #52BAFF 0%, #00A3EF 100%); /* W3C Markup, IE10 Release Preview */
+    background-image: radial-gradient(ellipse farthest-corner at center, #52BAFF 0%, #00A3EF 100%);
+    z-index:3;
+}
+
+#photolist
+{
+	display:none;
+}
+.centerAlign{
+    width: 400px; //some width you want
+    position: relative;
+    margin: 0px auto; //to align in center
+    display: table;
+}
+.hidden{
+	display: none;
+}
+.closeSymbol {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+.whiteSpaceDiv {
+	height:30px
+}
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Lato", sans-serif;
+  color: #8f9cb5;
+  background-color: #ffd88f;
+}
+
+a {
+  color: #35a785;
+  text-decoration: none;
+}
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.img-replace {
+  /* replace text with an image */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  color: transparent;
+  white-space: nowrap;
+}
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+header {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  background-color: #5e6e8d;
+  color: #FFF;
+}
+header h1 {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+.cd-popup-trigger {
+
+}
+@media only screen and (min-width: 1170px) {
+  .cd-popup-trigger {
+  }
+}
+
+/* -------------------------------- 
+
+xpopup 
+
+-------------------------------- */
+.cd-popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(94, 110, 141, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+.cd-popup.is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+  -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+  transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+
+.cd-popup-container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 4em auto;
+  background: #FFF;
+  border-radius: .25em .25em .4em .4em;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  transform: translateY(-40px);
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.cd-popup-container p {
+  padding: 3em 1em;
+}
+.cd-popup-container .cd-buttons:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-popup-container .cd-buttons li {
+  float: left;
+  width: 50%;
+}
+.cd-popup-container .cd-buttons a {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #FFF;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.cd-popup-container .cd-buttons li:first-child a {
+  background: #fc7169;
+  border-radius: 0 0 0 .25em;
+}
+.no-touch .cd-popup-container .cd-buttons li:first-child a:hover {
+  background-color: #fc8982;
+}
+.cd-popup-container .cd-buttons li:last-child a {
+  background: #b6bece;
+  border-radius: 0 0 .25em 0;
+}
+.no-touch .cd-popup-container .cd-buttons li:last-child a:hover {
+  background-color: #c5ccd8;
+}
+.cd-popup-container .cd-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+}
+.cd-popup-container .cd-popup-close::before, .cd-popup-container .cd-popup-close::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  width: 14px;
+  height: 3px;
+  background-color: #8f9cb5;
+}
+.cd-popup-container .cd-popup-close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 8px;
+}
+.cd-popup-container .cd-popup-close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: 8px;
+}
+.is-visible .cd-popup-container {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+@media only screen and (min-width: 1170px) {
+  .cd-popup-container {
+    margin: 8em auto;
+  }
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+

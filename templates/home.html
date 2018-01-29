@@ -1,0 +1,56 @@
+<!doctype html>
+<head>
+<title>Taunch</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/static/images/brendonUrie.jpg" />
+	<link href="/static/stylesheets/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style = "text-align:center">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/home">Taunch</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      	<li><a href="/home">Home</a></li>
+      	<li><a href="/edit_friends"> Edit Friends </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+	  {% if username %}
+	  <li><a>
+		  {{username}}
+	  </a></li>
+	  {% endif %}
+        <li><a href="/logout">Log Out</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<form id=comment_form action="/create_memory_page" method="POST">
+		Title: <input type="text" name="memory_title">
+		<input type ="submit" id=new_memory_button value="Create Memory" /><br>
+	</form>
+	{% if memories %}
+		{% for memory in memories %}
+		<a href="/memory_page/{{memory["id"]}}">
+			{{memory["title"]}}
+		</a><br/>
+		{% endfor %}
+	{% endif %}
+	{% if username and username == "John Espinosa" %}
+
+		<form id=change_name_form action="/update_name" method="POST">
+			<input type="text" name="old_name_input" value = "Old Name"> <input type="text" name="new_name_input" value = "New Name">
+			<input type ="submit" id='submit_button_update_name' value="Change Name" /><br>
+		</form>
+	{% endif %}
+</body>

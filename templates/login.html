@@ -1,0 +1,20 @@
+<!doctype html>
+<head>
+<title>Taunch</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/static/images/brendonUrie.jpg" />
+	<link href="/static/stylesheets/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<h1>Taunch</h1>
+{% if login_fail %}
+	<p>
+		Password or username incorrect. Please try again.
+	</p>
+{% endif %}
+	<form id=comment_form action="/login" method="POST">
+		Username: <input type="text" name="username_input"><br>
+		Password: <input type="password" name="password_input"><br>
+		<input type ="submit" id=submit_button value="Login" /><br>
+	</form>
+	<a href="/sign_up">Sign Up</a>
+</body>

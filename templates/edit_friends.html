@@ -1,0 +1,62 @@
+<!doctype html>
+<head>
+	<title>Hello from Flask</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/static/images/brendonUrie.jpg" />
+	<link href="/static/stylesheets/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<title> Taunch </title>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/home">Taunch</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      	<li><a href="/home">Home</a></li>
+      	<li><a href="/edit_friends"> Edit Friends </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout">Log Out</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	{% if add_fail %}
+	<p>
+		That person does not exist please try again.
+	</p>
+	{% endif %}
+	{% if delete_fail %}
+	<p>
+		You cannot delete a person that isn't on your friends list.
+	</p>
+	{% endif %}
+	<form id=comment_form action="/add_friend" method="POST">
+		Friend: <input type="text" name="username_input"><br>
+		<input type ="submit" id=submit_button value="Add Friend" /><br>
+	</form>
+	<form id=comment_form action="/remove_friend" method="POST">
+		Friend: <input type="text" name="username_input"><br>
+		<input type ="submit" id=submit_button value="Remove Friend" /><br>
+	</form>
+	<h2>
+		My Friends:
+	</h2>
+	{% if friends %}
+		{% for friend in friends %}
+		<p>
+			{{friend}}
+		</p>
+		{% endfor %}
+	{% endif %}
+</body>

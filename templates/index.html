@@ -1,0 +1,112 @@
+{% macro createCommentThread(currComment, comments, indentNumber) -%}
+	<div style = "margin-left: {{indentNumber}}%;" class = "commentsSection" id="{{currComment.id}}">
+		<div>
+			<input type="radio" name="group1" value="{{currComment.id}}">{{currComment.text}}<br>
+		</div>
+	</div>
+	{% for comment in comments %}
+		{% if comments[comment].parent_comment == currComment.id %}
+			{% set currChild = comments[comment] %}
+			{{createCommentThread(currChild, comments, indentNumber + 5)}}
+		{% endif %}
+	{% endfor %}
+{%- endmacro %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="static/stylesheets/styles3.css" />
+	<script type=text/javascript src="{{url_for('static', filename='jquery.js') }}"></script>
+	<script type=text/javascript>
+ 		$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+	</script>
+	<script type=text/javascript>
+	  $(function() {
+	  $.ajaxSetup({
+      "error":function() { alert("No internet connection :(");  }
+});
+	  	$('a').bind('click', function(event){
+	  	$.getJSON('/_no_update', {
+	      		}, function(data){
+	      			$('#file_display').attr('src', "https://subversion.ews.illinois.edu/svn/fa13-cs242/jcespin2/"+event.target.id)
+	      		});
+	  	});
+	    $('#submit_button').bind('click', function() {
+	      if ($('input[name="group1"]:checked').length > 0) {
+	      	var jqxhr = $.getJSON('/_add_comment', {
+	        	comment: $('input[name="comment"]').val(),
+	        	parentID: $('input[name="group1"]:radio:checked').val()
+	      		}, function(data) {
+	      			var leftMargin = ( 100 * parseFloat($("#"+data.parentID).css('margin-left')) / parseFloat($("#" + data.parentID).parent().css('width')) );
+	      			leftMargin = leftMargin + 5;
+	        		$("#"+data.parentID).after('<div style = "margin-left: ' + leftMargin + '%;" class = "commentsSection" id="'+ data.id +'"><div><input type="radio" name="group1" value="' + data.id + '">' + data.comment + '<br></div></div>');
+	      			});
+	      }
+	      else{
+	      	    $.getJSON('/_add_comment', {
+	        	comment: $('input[name="comment"]').val(),
+	        	parentID: "-1"
+	      		}, function(data) {
+	      			$( "#test" ).remove();
+	      			$("#comment_section").before('<div style = "margin-left: 13%;" class = "commentsSection" id="'+ data.id +'"><div><input type="radio" name="group1" value="' + data.id + '">' + data.comment + '<br></div></div>');
+				});
+	      }
+	      return false;
+	    });
+	  });
+	</script>
+		<link rel="shortcut icon" type="image/x-icon" href="/static/images/brendonUrie.jpg" />
+</head>
+<body>
+<title>Taunch</title>
+	<p href = "/logout">
+		<a href = "/logout">
+		Logout
+		</a>
+	</p>
+	{% if xml %}
+		{% for project in xml.getProjects() %}
+	<div class = "project">
+		<p>
+			{{project.__str__()}}
+		</p>
+		<p>
+		</p>
+				{% for file in project.getFiles() %}
+		<a style="color:green" id="{{file.path}}">
+			{{file.__str__()}}
+		</a>
+		<p>
+		</p>
+					{% for revision in file.getRevisions() %}
+		<p style="color:purple;">
+			{{revision.__str__()}}
+		</p>
+		<p>
+		</p>
+					{% endfor %}
+				{% endfor %}
+	</div>
+		{% endfor %}
+	{% endif %}
+	<form id=comment_form action="/" method="POST">
+	{% if comments %}
+		{% for commentID in comments %}
+			{% if comments[commentID].parent_comment == -1 %}
+				{{createCommentThread(comments[commentID], comments, 13)}}
+			{% endif %}
+		{% endfor %}
+	{% else %}
+	<div id=test class="project">
+		<p> no entries </p>
+	</div>
+	{% endif %}
+	<div class = "project" id=comment_section>
+		<input type = "text" name="comment" />
+		<input type ="submit" id=submit_button value="Comment" />
+	</div>
+	<iframe id="file_display" style="margin-left:10.5%;margin-top:20px" src="">
+  		<p>Your browser does not support iframes.</p>
+	</iframe>
+	</form>
+</body>
+</html>
